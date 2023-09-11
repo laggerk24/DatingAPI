@@ -6,6 +6,8 @@ namespace DatingAPI.DTOs
     {
         [Required]
         public string userName { get; set; }
+
+        [StringLength(8,MinimumLength=4)]
         [Required]
         public string password { get; set; }
 

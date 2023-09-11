@@ -14,8 +14,8 @@ namespace DatingAPI.Extensions
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["TokenKey"])),
-                    ValidateIssuer = false,
-                    ValidateAudience = false
+                    ValidateIssuer = false,      //api server 
+                    ValidateAudience = false     //Angular application
                 };
             });
             return services;

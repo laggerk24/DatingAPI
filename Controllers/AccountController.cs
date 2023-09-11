@@ -39,7 +39,7 @@ namespace DatingAPI.Controllers
                 await _context.SaveChangesAsync();
                 return new UserTokenDTO
                 {
-                    Name = userDto.userName,
+                    userName = userDto.userName,
                     Token = _tokenService.CreateToken(user)
                 };
             }
@@ -58,7 +58,7 @@ namespace DatingAPI.Controllers
             }
             return new UserTokenDTO
             {
-                Name = userDto.userName,
+                userName = userDto.userName,
                 Token = _tokenService.CreateToken(user)
             };
         }

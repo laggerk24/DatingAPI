@@ -1,6 +1,7 @@
 using DatingAPI.Data;
 using DatingAPI.Extensions;
 using DatingAPI.Interfaces;
+using DatingAPI.Middleware;
 using DatingAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -30,6 +31,7 @@ var app = builder.Build();
 
 app.UseCors();
 
+app.UseMiddleware<ExceptionMiddleware>();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
